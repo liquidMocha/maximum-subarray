@@ -5,8 +5,6 @@ import (
 )
 
 func maxSubarray(input []float64) ([]float64, float64) {
-	//fmt.Println(input)
-	//fmt.Println(len(input))
 	if len(input) == 1 {
 		return input, input[0]
 	} else {
@@ -48,5 +46,9 @@ func findCrossingMaxSubarray(input []float64) ([]float64, float64) {
 		}
 	}
 
+	var nil []float64
+	if leftSum+rightSum < 0 {
+		return nil, 0
+	}
 	return input[leftSumPosition : rightSumPosition+1], leftSum + rightSum
 }
